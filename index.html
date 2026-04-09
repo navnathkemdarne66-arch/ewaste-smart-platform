@@ -9,49 +9,72 @@
 <style>
 
 body{
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 margin:0;
 background:#f4f7f8;
 }
 
+/* HERO SECTION */
+
 .hero{
 height:100vh;
 background:linear-gradient(120deg,#0a7d5e,#1cc48f);
-color:white;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+color:white;
 text-align:center;
 }
 
 .hero h1{
-font-size:48px;
+font-size:50px;
+margin-bottom:10px;
 }
 
+.hero p{
+font-size:20px;
+}
+
+/* SECTIONS */
+
 .section{
-padding:60px;
+padding:70px 10%;
 text-align:center;
 }
+
+.section h2{
+color:#0a7d5e;
+margin-bottom:40px;
+}
+
+/* CARDS */
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+gap:25px;
 }
 
 .card{
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 6px 12px rgba(0,0,0,.15);
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 15px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 .counter{
-font-size:28px;
+font-size:32px;
 color:#0a7d5e;
 font-weight:bold;
 }
+
+/* FORM */
 
 form{
 max-width:400px;
@@ -61,27 +84,32 @@ margin:auto;
 input,select{
 width:100%;
 padding:10px;
-margin:8px 0;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #ccc;
 }
 
 button{
+width:100%;
 background:#0a7d5e;
 color:white;
-padding:12px;
 border:none;
+padding:12px;
 cursor:pointer;
-width:100%;
+border-radius:6px;
 }
+
+/* TABLE */
 
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:20px;
+margin-top:25px;
 }
 
 th,td{
 border:1px solid #ccc;
-padding:8px;
+padding:10px;
 }
 
 th{
@@ -89,11 +117,18 @@ background:#0a7d5e;
 color:white;
 }
 
+/* CERTIFICATE */
+
 .certificate{
 display:none;
-border:5px solid #0a7d5e;
+border:6px solid #0a7d5e;
 padding:30px;
 margin-top:40px;
+}
+
+.signature img{
+width:150px;
+margin-top:20px;
 }
 
 footer{
@@ -108,10 +143,17 @@ text-align:center;
 
 <body>
 
+<!-- HERO -->
+
 <div class="hero">
+
 <h1>Smart Urban Mining Platform</h1>
+
 <p>Transforming E-Waste into Valuable Resources</p>
+
 </div>
+
+<!-- IMPACT -->
 
 <div class="section">
 
@@ -138,6 +180,8 @@ text-align:center;
 
 </div>
 
+<!-- CHART -->
+
 <div class="section">
 
 <h2>Metal Recovery Dashboard</h2>
@@ -146,15 +190,17 @@ text-align:center;
 
 </div>
 
+<!-- DONATION -->
+
 <div class="section">
 
 <h2>Donate E-Waste</h2>
 
 <form onsubmit="donate(event)">
 
-<input id="name" placeholder="Name" required>
+<input id="name" placeholder="Your Name" required>
 
-<input id="phone" placeholder="Phone">
+<input id="phone" placeholder="Phone Number">
 
 <select id="type">
 <option>Mobile</option>
@@ -165,11 +211,13 @@ text-align:center;
 
 <input id="weight" type="number" placeholder="Weight (kg)" required>
 
-<button>Submit</button>
+<button>Submit Donation</button>
 
 </form>
 
 </div>
+
+<!-- LEADERBOARD -->
 
 <div class="section">
 
@@ -189,6 +237,8 @@ text-align:center;
 
 </div>
 
+<!-- CERTIFICATE -->
+
 <div class="section">
 
 <div class="certificate" id="certificate">
@@ -199,19 +249,25 @@ text-align:center;
 
 <h1 id="certName"></h1>
 
-<p>For contributing to sustainable recycling.</p>
+<p>For contributing to sustainable recycling of electronic waste.</p>
 
-<p>PCCoE Mechanical Engineering Project</p>
+<p>Pimpri Chinchwad College of Engineering</p>
 
-<img src="signature.png" width="150">
+<div class="signature">
+
+<img src="signature.png">
 
 <p><b>Sanket Navnath Kemdarne</b></p>
 
-<button onclick="window.print()">Download</button>
+</div>
+
+<button onclick="window.print()">Download Certificate</button>
 
 </div>
 
 </div>
+
+<!-- MAP -->
 
 <div class="section">
 
@@ -229,7 +285,7 @@ src="https://www.google.com/maps?q=e-waste+recycling+center+india&output=embed">
 
 <footer>
 
-Smart Urban Mining Platform
+Smart Urban Mining Platform | PCCoE Project
 
 </footer>
 
@@ -268,7 +324,8 @@ table.innerHTML=""
 
 donors.slice(0,5).forEach((d,i)=>{
 
-table.innerHTML+=`<tr>
+table.innerHTML+=`
+<tr>
 <td>${i+1}</td>
 <td>${d.name}</td>
 <td>${d.weight}</td>
