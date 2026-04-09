@@ -362,6 +362,16 @@ document.getElementById("certName").innerText=name
 
 document.getElementById("certificate").style.display="block"
 
+  /* Add donor name to list */
+
+let donorList = document.getElementById("donorList");
+
+let li = document.createElement("li");
+
+li.textContent = name + " donated " + weight + " kg of e-waste";
+
+donorList.appendChild(li);
+
   /* Add donor to list */
 
 let donorList = document.getElementById("donorList")
