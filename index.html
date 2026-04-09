@@ -341,7 +341,6 @@ let phone=document.getElementById("phone").value
 let weight=parseFloat(document.getElementById("weight").value)
 
 let total=parseFloat(document.getElementById("waste").innerText)
-
 total+=weight
 
 document.getElementById("waste").innerText=total
@@ -355,12 +354,26 @@ document.getElementById("copper").innerText=copper.toFixed(2)
 document.getElementById("co2").innerText=co2.toFixed(2)
 
 chart.data.datasets[0].data=[copper,aluminium,gold]
-
 chart.update()
 
 document.getElementById("certName").innerText=name
-
 document.getElementById("certificate").style.display="block"
+
+let donorList=document.getElementById("donorList")
+
+let li=document.createElement("li")
+li.innerText=name+" donated "+weight+" kg"
+
+donorList.appendChild(li)
+
+document.querySelector("button").disabled=true
+
+let msg="E-Waste Donation:%0AName:"+name+"%0APhone:"+phone+"%0AWeight:"+weight+"kg"
+
+window.open("https://wa.me/918080226113?text="+msg)
+
+}
+
 
   /* Add donor name to list */
 
