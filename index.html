@@ -254,6 +254,14 @@ text-align:center;
 
 </div>
 
+  <div class="section" id="leaderboard">
+
+<h2>Recent Donors</h2>
+
+<ul id="donorList"></ul>
+
+</div>
+  
 <div class="section">
 
 <div class="certificate" id="certificate">
@@ -353,6 +361,29 @@ chart.update()
 document.getElementById("certName").innerText=name
 
 document.getElementById("certificate").style.display="block"
+
+  /* Add donor to list */
+
+let donorList = document.getElementById("donorList")
+
+let li = document.createElement("li")
+
+li.textContent = name + " donated " + weight + " kg of e-waste"
+
+donorList.appendChild(li)
+
+/* Disable submit button */
+
+document.querySelector("button").disabled = true
+document.querySelector("button").innerText = "Donation Submitted"
+
+/* WhatsApp message */
+
+let message = "E-Waste Donation:\nName: " + name + "\nPhone: " + phone + "\nWeight: " + weight + " kg"
+
+let whatsappURL = "https://api.whatsapp.com/send?phone=918080226113&text=" + encodeURIComponent(message)
+
+window.open(whatsappURL,"_blank")
 
 /* WhatsApp message */
 
