@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Smart Urban Mining Platform</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f7f8;
+}
+
+.hero{
+height:100vh;
+background:linear-gradient(120deg,#0a7d5e,#1cc48f);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.section{
+padding:60px;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 6px 12px rgba(0,0,0,.15);
+}
+
+.counter{
+font-size:28px;
+color:#0a7d5e;
+font-weight:bold;
+}
+
+form{
+max-width:400px;
+margin:auto;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:8px 0;
+}
+
+button{
+background:#0a7d5e;
+color:white;
+padding:12px;
+border:none;
+cursor:pointer;
+width:100%;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:8px;
+}
+
+th{
+background:#0a7d5e;
+color:white;
+}
+
+.certificate{
+display:none;
+border:5px solid #0a7d5e;
+padding:30px;
+margin-top:40px;
+}
+
+footer{
+background:#0a7d5e;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Smart Urban Mining Platform</h1>
+<p>Transforming E-Waste into Valuable Resources</p>
+</div>
+
+<div class="section">
+
+<h2>Environmental Impact</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="counter" id="waste">0</div>
+<p>Kg E-Waste Collected</p>
+</div>
+
+<div class="card">
+<div class="counter" id="copper">0</div>
+<p>Kg Copper Recovered</p>
+</div>
+
+<div class="card">
+<div class="counter" id="co2">0</div>
+<p>Kg CO₂ Prevented</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Metal Recovery Dashboard</h2>
+
+<canvas id="chart"></canvas>
+
+</div>
+
+<div class="section">
+
+<h2>Donate E-Waste</h2>
+
+<form onsubmit="donate(event)">
+
+<input id="name" placeholder="Name" required>
+
+<input id="phone" placeholder="Phone">
+
+<select id="type">
+<option>Mobile</option>
+<option>Laptop</option>
+<option>Battery</option>
+<option>Charger</option>
+</select>
+
+<input id="weight" type="number" placeholder="Weight (kg)" required>
+
+<button>Submit</button>
+
+</form>
+
+</div>
+
+<div class="section">
+
+<h2>Top Donors</h2>
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Kg</th>
+</tr>
+
+<tbody id="table"></tbody>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<div class="certificate" id="certificate">
+
+<h2>Certificate of Responsible Recycling</h2>
+
+<p>This certificate is awarded to</p>
+
+<h1 id="certName"></h1>
+
+<p>For contributing to sustainable recycling.</p>
+
+<p>PCCoE Mechanical Engineering Project</p>
+
+<img src="signature.png" width="150">
+
+<p><b>Sanket Navnath Kemdarne</b></p>
+
+<button onclick="window.print()">Download</button>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>E-Waste Collection Centers</h2>
+
+<iframe
+width="100%"
+height="350"
+style="border:0"
+loading="lazy"
+src="https://www.google.com/maps?q=e-waste+recycling+center+india&output=embed">
+</iframe>
+
+</div>
+
+<footer>
+
+Smart Urban Mining Platform
+
+</footer>
+
+<script>
+
+let donors=[]
+
+const ctx=document.getElementById('chart').getContext('2d')
+
+let chart=new Chart(ctx,{
+type:'bar',
+data:{
+labels:['Copper','Aluminium','Gold'],
+datasets:[{
+label:'Recovered Metals',
+data:[0,0,0],
+backgroundColor:['orange','blue','gold']
+}]
+}
+})
+
+function donate(e){
+
+e.preventDefault()
+
+let name=document.getElementById("name").value
+let weight=parseFloat(document.getElementById("weight").value)
+
+donors.push({name,weight})
+
+donors.sort((a,b)=>b.weight-a.weight)
+
+let table=document.getElementById("table")
+
+table.innerHTML=""
+
+donors.slice(0,5).forEach((d,i)=>{
+
+table.innerHTML+=`<tr>
+<td>${i+1}</td>
+<td>${d.name}</td>
+<td>${d.weight}</td>
+</tr>`
+
+})
+
+let total=parseFloat(document.getElementById("waste").innerText)
+
+total+=weight
+
+document.getElementById("waste").innerText=total
+
+let copper=total*0.15
+let aluminium=total*0.10
+let gold=total*0.0003
+let co2=total*1.2
+
+document.getElementById("copper").innerText=copper.toFixed(2)
+
+document.getElementById("co2").innerText=co2.toFixed(2)
+
+chart.data.datasets[0].data=[copper,aluminium,gold]
+
+chart.update()
+
+document.getElementById("certName").innerText=name
+
+document.getElementById("certificate").style.display="block"
+
+}
+
+</script>
+
+</body>
+</html>
