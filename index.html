@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Smart Urban Mining Platform</title>
 
 <style>
@@ -46,7 +47,6 @@ margin-left:25px;
 color:white;
 text-decoration:none;
 font-weight:bold;
-transition:0.3s;
 }
 
 .navbar a:hover{
@@ -63,7 +63,7 @@ justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("hero.jpg");
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("hero.jpg");
 background-size:cover;
 background-position:center;
 }
@@ -72,8 +72,7 @@ background-position:center;
 overflow:hidden;
 border-right:3px solid white;
 white-space:nowrap;
-animation:typing 4s steps(30) infinite alternate,
-blink .7s infinite;
+animation:typing 4s steps(30) infinite alternate, blink .7s infinite;
 font-size:55px;
 }
 
@@ -118,11 +117,6 @@ background:white;
 padding:25px;
 border-radius:12px;
 box-shadow:0 5px 20px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.impact div:hover{
-transform:translateY(-10px);
 }
 
 /* PROCESS */
@@ -152,7 +146,7 @@ border-radius:12px;
 margin-bottom:15px;
 }
 
-/* VISIT */
+/* INDUSTRY VISIT */
 
 .visit{
 display:grid;
@@ -195,8 +189,6 @@ button:hover{
 background:#066d4e;
 }
 
-/* DONOR LIST */
-
 .donors{
 margin-top:20px;
 background:white;
@@ -204,9 +196,7 @@ padding:15px;
 border-radius:10px;
 }
 
-.contact{
-text-align:center;
-}
+/* FLOAT BUTTON */
 
 .float-btn{
 position:fixed;
@@ -221,11 +211,13 @@ font-weight:bold;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
+/* FOOTER */
+
 footer{
 background:#0a7d5e;
 color:white;
 text-align:center;
-padding:15px;
+padding:20px;
 margin-top:40px;
 }
 
@@ -235,23 +227,32 @@ margin-top:40px;
 <body>
 
 <div class="navbar">
+
 <h2>Urban Mining</h2>
 
 <ul>
+
 <li><a href="#">Home</a></li>
 <li><a href="#impact">Impact</a></li>
 <li><a href="#process">Process</a></li>
-<li><a href="#visit">Visit</a></li>
+<li><a href="#visit">Industry Visit</a></li>
 <li><a href="#donate">Donate</a></li>
-<li><a href="#contact">Contact</a></li>
+
 </ul>
 
 </div>
 
+<!-- HERO -->
+
 <div class="hero">
+
 <h1 class="typing">Smart Urban Mining Platform</h1>
-<p>Transforming E-Waste into Valuable Resources</p>
+
+<p>Transforming Electronic Waste into Valuable Resources</p>
+
 </div>
+
+<!-- IMPACT -->
 
 <section id="impact" class="section">
 
@@ -260,23 +261,25 @@ margin-top:40px;
 <div class="impact">
 
 <div>
-<h2 id="waste">0</h2>
+<h2 id="waste">250</h2>
 <p>Kg E-Waste Collected</p>
 </div>
 
 <div>
-<h2 id="copper">0</h2>
+<h2 id="copper">40</h2>
 <p>Kg Copper Recovered</p>
 </div>
 
 <div>
-<h2 id="co2">0</h2>
+<h2 id="co2">120</h2>
 <p>Kg CO₂ Pollution Prevented</p>
 </div>
 
 </div>
 
 </section>
+
+<!-- PROCESS -->
 
 <section id="process" class="section">
 
@@ -287,50 +290,60 @@ margin-top:40px;
 <div class="process-card">
 <img src="process1.jpg">
 <h3>Collection</h3>
-<p>Electronic waste is collected from homes and industries.</p>
+<p>E-waste devices are collected from homes and industries for safe recycling.</p>
 </div>
 
 <div class="process-card">
 <img src="process2.jpg">
 <h3>Sorting</h3>
-<p>E-waste is sorted into plastics, circuit boards and metals.</p>
+<p>Electronic waste is categorized into plastics, circuit boards and metals.</p>
 </div>
 
 <div class="process-card">
 <img src="process3.jpg">
 <h3>Dismantling</h3>
-<p>Devices are dismantled to separate reusable components.</p>
+<p>Devices are dismantled manually to separate valuable components.</p>
 </div>
 
 <div class="process-card">
 <img src="process4.jpg">
 <h3>Metal Recovery</h3>
-<p>Valuable metals like copper and aluminium are extracted.</p>
+<p>Precious metals like copper and aluminium are recovered.</p>
 </div>
 
 </div>
 
 </section>
 
+<!-- INDUSTRY VISIT -->
+
 <section id="visit" class="section">
 
-<h2 class="section-title">Industry Visit – E-Waste Facility</h2>
+<h2 class="section-title">Industry Visit</h2>
 
 <div class="visit">
 
 <div>
+
 <img src="visit1.jpeg">
-<p>Students from PCCOE visited E-waste recycling facility.</p>
+
+<p>Students visited Electrofine Recycling Facility MIDC Bhosari.</p>
+
 </div>
 
 <div>
+
 <img src="visit2.jpeg">
-<p>Experts demonstrated dismantling and metal recovery.</p>
+
+<p>Experts explained dismantling and recovery of metals.</p>
+
 </div>
 
 </div>
 
 </section>
+
+<!-- DONATION -->
 
 <section id="donate" class="section">
 
@@ -339,9 +352,13 @@ margin-top:40px;
 <div class="form">
 
 <input id="name" placeholder="Your Name">
+
 <input id="phone" placeholder="Phone Number">
+
 <input id="address" placeholder="Pickup Address">
-<input id="item" placeholder="Item (Laptop, Mobile etc)">
+
+<input id="item" placeholder="Item (Laptop / Mobile)">
+
 <input id="weight" placeholder="Weight (Kg)">
 
 <button onclick="donate()">Submit Donation</button>
@@ -360,24 +377,15 @@ margin-top:40px;
 
 </section>
 
-<section id="contact" class="section contact">
-
-<h2 class="section-title">Contact</h2>
-
-<p><b>Sanket Kemdarne</b></p>
-<p>Mobile: 8080226113</p>
-
-<p><b>Sandip Mane</b></p>
-<p>Mobile: 9552661862</p>
-
-<p>Under guidance of <b>Miss Anushree Chandragade</b></p>
-
-</section>
-
 <a href="#donate" class="float-btn">Donate</a>
 
 <footer>
-Smart Urban Mining Platform | PCCOE Project
+
+Smart Urban Mining Platform  
+Developed by **Sanket Kemdarne & Sandip Mane**  
+
+Under the guidance of **Miss Anushree Chandragade**
+
 </footer>
 
 <script>
@@ -410,26 +418,25 @@ let name=document.getElementById("name").value
 let item=document.getElementById("item").value
 let weight=document.getElementById("weight").value
 
-if(name=="" || item=="" || weight==""){
-alert("Please fill donation details first")
-return
-}
-
 let date=new Date().toLocaleDateString()
+
+let certID="EW-"+Math.floor(Math.random()*100000)
 
 let cert=window.open("","_blank")
 
 cert.document.write(`
 
 <html>
+
 <head>
-<title>E-Waste Recycling Certificate</title>
+
+<title>Certificate</title>
 
 <style>
 
 body{
-font-family:Arial;
 background:#e8f5e9;
+font-family:Arial;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -439,42 +446,14 @@ height:100vh;
 .certificate{
 width:900px;
 background:white;
-border:12px solid #2e7d32;
 padding:40px;
+border:12px solid #2e7d32;
 text-align:center;
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
 }
 
 .logo{
 width:90px;
 margin-bottom:10px;
-}
-
-.header{
-font-size:22px;
-color:#2e7d32;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-h1{
-color:#2e7d32;
-font-size:38px;
-margin-bottom:10px;
-}
-
-h2{
-font-size:30px;
-margin:15px 0;
-}
-
-p{
-font-size:18px;
-margin:6px 0;
-}
-
-.details{
-margin-top:15px;
 }
 
 .signatures{
@@ -483,28 +462,8 @@ justify-content:space-around;
 margin-top:60px;
 }
 
-.sign-box{
-text-align:center;
-}
-
 .sign-box img{
 width:120px;
-}
-
-.footer{
-margin-top:40px;
-font-style:italic;
-color:#2e7d32;
-}
-
-button{
-background:#2e7d32;
-color:white;
-padding:10px 20px;
-border:none;
-border-radius:5px;
-margin-top:20px;
-cursor:pointer;
 }
 
 </style>
@@ -517,71 +476,64 @@ cursor:pointer;
 
 <img src="recycle-logo.png" class="logo">
 
-<div class="header">
-Urban Mining & Sustainable Recycling Initiative
-</div>
-
 <h1>Certificate of Recycling & Contribution</h1>
 
-<p>This document certifies that</p>
+<p>This certifies that</p>
 
 <h2>${name}</h2>
 
-<p>has responsibly donated electronic waste for recycling.</p>
+<p>has responsibly donated electronic waste.</p>
 
-<div class="details">
+<p><b>Item:</b> ${item}</p>
 
-<p><b>Item Donated:</b> ${item}</p>
-
-<p><b>Total Quantity Received:</b> ${weight} Kg</p>
+<p><b>Quantity:</b> ${weight} Kg</p>
 
 <p><b>Date:</b> ${date}</p>
 
-<p><b>Location:</b> Pimpri-Chinchwad, Maharashtra</p>
-
-</div>
-
-<p>
-The donated material will be processed using sustainable urban mining
-techniques to recover valuable resources while protecting the environment.
-</p>
+<p><b>Certificate ID:</b> ${certID}</p>
 
 <div class="signatures">
 
 <div class="sign-box">
+
 <img src="signature.png">
+
 <p><b>Sanket Navnath Kemdarne</b></p>
-<p>E-Waste Initiative</p>
+
 </div>
 
 <div class="sign-box">
+
 <img src="signature_sandip.png">
+
 <p><b>Sandip Mane</b></p>
-<p>Project Coordinator</p>
+
 </div>
 
 <div class="sign-box">
+
 <img src="signature_mam.png">
+
 <p><b>Miss Anushree Chandragade</b></p>
-<p>Faculty Guide</p>
-</div>
 
 </div>
 
-<div class="footer">
-We appreciate your contribution toward building a greener and sustainable environment.
 </div>
 
-<button onclick="window.print()">Download / Print Certificate</button>
+<br>
+
+<button onclick="window.print()">Download Certificate</button>
 
 </div>
 
 </body>
+
 </html>
 
 `)
 
 }
+
 </script>
 
 </body>
