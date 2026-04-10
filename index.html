@@ -54,7 +54,7 @@ color:#ffd700;
 
 .hero{
 height:85vh;
-background:url("images/hero.jpg") center/cover no-repeat;
+background:url("hero.jpg") center/cover no-repeat;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -217,7 +217,7 @@ text-align:center;
 
 <h2>About E-Waste Recycling</h2>
 
-<img src="images/about.jpg" width="350">
+<img src="about.jpg" width="350">
 
 <p>
 Electronic waste contains valuable metals like copper, aluminium and gold.
@@ -235,19 +235,19 @@ Our platform collects e-waste and sends it for safe recycling.
 <div class="cards">
 
 <div class="card">
-<img src="images/service1.jpg">
+<img src="service1.jpg">
 <h3>E-Waste Collection</h3>
 <p>Collecting old electronics from homes and industries.</p>
 </div>
 
 <div class="card">
-<img src="images/service2.jpg">
+<img src="service2.jpg">
 <h3>Secure Recycling</h3>
 <p>Devices are safely dismantled and recycled.</p>
 </div>
 
 <div class="card">
-<img src="images/service3.jpg">
+<img src="service3.jpg">
 <h3>Material Recovery</h3>
 <p>Precious metals are recovered from electronics.</p>
 </div>
@@ -265,22 +265,22 @@ Our platform collects e-waste and sends it for safe recycling.
 <div class="cards">
 
 <div class="card">
-<img src="images/process1.jpg">
+<img src="process1.jpg">
 <h3>Collection</h3>
 </div>
 
 <div class="card">
-<img src="images/process2.jpg">
+<img src="process2.jpg">
 <h3>Sorting</h3>
 </div>
 
 <div class="card">
-<img src="images/process3.jpg">
+<img src="process3.jpg">
 <h3>Dismantling</h3>
 </div>
 
 <div class="card">
-<img src="images/process4.jpg">
+<img src="process4.jpg">
 <h3>Metal Recovery</h3>
 </div>
 
@@ -315,178 +315,11 @@ Our platform collects e-waste and sends it for safe recycling.
 
 </div>
 
-<!-- CHART -->
-
-<div class="section">
-
-<h2>Metal Recovery Chart</h2>
-
-<canvas id="chart"></canvas>
-
-</div>
-
-<!-- DONATE -->
-
-<div class="section" id="donate">
-
-<h2>Donate E-Waste</h2>
-
-<form id="donationForm">
-
-<input id="name" placeholder="Your Name" required>
-
-<input id="phone" placeholder="Phone Number">
-
-<select>
-<option>Mobile</option>
-<option>Laptop</option>
-<option>Battery</option>
-<option>Charger</option>
-</select>
-
-<input id="weight" type="number" placeholder="Weight (kg)" required>
-
-<button id="submitBtn">Submit Donation</button>
-
-</form>
-
-</div>
-
-<!-- DONORS -->
-
-<div class="section" id="leaderboard">
-
-<h2>Recent Donors</h2>
-
-<ul id="donorList"></ul>
-
-</div>
-
-<!-- MAP -->
-
-<div class="section" id="map">
-
-<h2>E-Waste Collection Centers</h2>
-
-<iframe
-width="100%"
-height="350"
-style="border:0"
-src="https://www.google.com/maps?q=e-waste+recycling+center+india&output=embed">
-</iframe>
-
-</div>
-
-<!-- CERTIFICATE -->
-
-<div class="section">
-
-<div class="certificate" id="certificate">
-
-<h2>Certificate of Responsible Recycling</h2>
-
-<p>This certificate is awarded to</p>
-
-<h1 id="certName"></h1>
-
-<p>For contributing to sustainable recycling of electronic waste.</p>
-
-<div class="signature">
-
-<img src="signature.png">
-
-<p><b>Sanket Navnath Kemdarne</b></p>
-
-</div>
-
-<button onclick="window.print()">Download Certificate</button>
-
-</div>
-
-</div>
-
 <footer>
 
 Smart Urban Mining Platform | PCCoE Project
 
 </footer>
-
-<script>
-
-const ctx=document.getElementById('chart').getContext('2d')
-
-let chart=new Chart(ctx,{
-type:'bar',
-data:{
-labels:['Copper','Aluminium','Gold'],
-datasets:[{
-label:'Recovered Metals',
-data:[0,0,0],
-backgroundColor:['orange','blue','gold']
-}]
-}
-})
-
-let donors=JSON.parse(localStorage.getItem("donors"))||[]
-
-function displayDonors(){
-
-let list=document.getElementById("donorList")
-
-list.innerHTML=""
-
-donors.forEach(d=>{
-let li=document.createElement("li")
-li.innerText=d
-list.appendChild(li)
-})
-
-}
-
-displayDonors()
-
-document.getElementById("donationForm").addEventListener("submit",function(e){
-
-e.preventDefault()
-
-let name=document.getElementById("name").value
-let weight=parseFloat(document.getElementById("weight").value)
-
-let total=parseFloat(document.getElementById("waste").innerText)
-
-total+=weight
-
-document.getElementById("waste").innerText=total
-
-let copper=total*0.15
-let aluminium=total*0.10
-let gold=total*0.0003
-let co2=total*1.2
-
-document.getElementById("copper").innerText=copper.toFixed(2)
-document.getElementById("co2").innerText=co2.toFixed(2)
-
-chart.data.datasets[0].data=[copper,aluminium,gold]
-chart.update()
-
-let donorText=name+" donated "+weight+" kg"
-
-donors.push(donorText)
-
-localStorage.setItem("donors",JSON.stringify(donors))
-
-displayDonors()
-
-document.getElementById("certName").innerText=name
-document.getElementById("certificate").style.display="block"
-
-let message="E-Waste Donation:%0AName:"+name+"%0AWeight:"+weight+"kg"
-
-window.open("https://wa.me/918080226113?text="+message)
-
-})
-
-</script>
 
 </body>
 </html>
