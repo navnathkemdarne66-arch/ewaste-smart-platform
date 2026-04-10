@@ -162,8 +162,6 @@ border-radius:6px;
 box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* FOOTER */
-
 footer{
 background:#0a7d5e;
 color:white;
@@ -188,6 +186,7 @@ text-align:center;
 <li><a href="#about">About</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#process">Process</a></li>
+<li><a href="#visit">Industry Visit</a></li>
 <li><a href="#impact">Impact</a></li>
 <li><a href="#donate">Donate</a></li>
 <li><a href="#leaderboard">Donors</a></li>
@@ -311,6 +310,54 @@ Faculty – E-Waste Management
 
 </div>
 
+<!-- INDUSTRY VISIT -->
+
+<div class="section" id="visit">
+
+<h2>Industry Visit – E-Waste Recycling Facility</h2>
+
+<p>
+As part of our academic study we visited a professional
+e-waste recycling facility operated by Electrofine
+Recycling Pvt. Ltd. in association with the
+Environment Conservation Association (ECA).
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="visit1.jpg">
+
+<h3>Industrial Visit – MIDC Bhosari</h3>
+
+<p>
+Students from Pimpri Chinchwad College of Engineering
+visited the recycling facility in MIDC Bhosari where
+experts explained collection, sorting and recycling
+processes used in urban mining.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="visit2.jpg">
+
+<h3>Learning from Industry Experts</h3>
+
+<p>
+During the visit engineers demonstrated dismantling
+of electronic devices and recovery of valuable
+metals such as copper and aluminium.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 <!-- ENVIRONMENTAL IMPACT -->
 
 <div class="section" id="impact">
@@ -345,33 +392,6 @@ Faculty – E-Waste Management
 <h2>Metal Recovery Dashboard</h2>
 
 <canvas id="metalChart"></canvas>
-
-</div>
-
-<!-- DONATE -->
-
-<div class="section" id="donate">
-
-<h2>Donate E-Waste</h2>
-
-<form id="donationForm">
-
-<input id="name" placeholder="Your Name" required>
-<input id="weight" type="number" placeholder="Weight (kg)" required>
-
-<button>Submit Donation</button>
-
-</form>
-
-</div>
-
-<!-- DONOR LIST -->
-
-<div class="section" id="leaderboard">
-
-<h2>Recent Donors</h2>
-
-<ul id="donorList"></ul>
 
 </div>
 
@@ -442,45 +462,6 @@ data:[180,120,20],
 backgroundColor:["orange","silver","gold"]
 }]
 }
-})
-
-/* DONOR SYSTEM */
-
-let donors=JSON.parse(localStorage.getItem("donors"))||[]
-
-function displayDonors(){
-
-let list=document.getElementById("donorList")
-
-list.innerHTML=""
-
-donors.forEach(d=>{
-
-let li=document.createElement("li")
-li.innerText=d
-list.appendChild(li)
-
-})
-
-}
-
-displayDonors()
-
-document.getElementById("donationForm").addEventListener("submit",function(e){
-
-e.preventDefault()
-
-let name=document.getElementById("name").value
-let weight=document.getElementById("weight").value
-
-let text=name+" donated "+weight+" kg"
-
-donors.push(text)
-
-localStorage.setItem("donors",JSON.stringify(donors))
-
-displayDonors()
-
 })
 
 </script>
