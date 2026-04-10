@@ -13,7 +13,8 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f5f7f8;
+background:#f4f7f8;
+scroll-behavior:smooth;
 }
 
 /* NAVBAR */
@@ -43,17 +44,12 @@ margin-left:25px;
 color:white;
 text-decoration:none;
 font-weight:bold;
-transition:0.3s;
-}
-
-.navbar a:hover{
-color:#ffd700;
 }
 
 /* HERO */
 
 .hero{
-height:85vh;
+height:90vh;
 background:url("hero.jpg") center/cover no-repeat;
 display:flex;
 flex-direction:column;
@@ -65,14 +61,22 @@ text-shadow:2px 2px 10px black;
 }
 
 .hero h1{
-font-size:48px;
+font-size:50px;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
-padding:70px 10%;
+padding:80px 10%;
 text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 .section h2{
@@ -97,7 +101,7 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 }
 
 .card img{
@@ -105,7 +109,12 @@ width:100%;
 border-radius:10px;
 }
 
-/* IMPACT */
+.card p{
+font-size:14px;
+color:#555;
+}
+
+/* COUNTERS */
 
 .counter{
 font-size:35px;
@@ -113,19 +122,19 @@ font-weight:bold;
 color:#0a7d5e;
 }
 
-/* FORM */
+/* DONOR FORM */
 
 form{
 max-width:400px;
 margin:auto;
 }
 
-input,select{
+input{
 width:100%;
 padding:10px;
 margin:8px 0;
-border:1px solid #ccc;
 border-radius:5px;
+border:1px solid #ccc;
 }
 
 button{
@@ -136,10 +145,6 @@ color:white;
 border:none;
 border-radius:5px;
 cursor:pointer;
-}
-
-button:hover{
-background:#06614a;
 }
 
 /* DONOR LIST */
@@ -154,22 +159,10 @@ background:white;
 margin:8px;
 padding:10px;
 border-radius:6px;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* CERTIFICATE */
-
-.certificate{
-display:none;
-border:6px solid #0a7d5e;
-padding:30px;
-background:white;
-margin-top:30px;
-}
-
-.signature img{
-width:150px;
-}
+/* FOOTER */
 
 footer{
 background:#0a7d5e;
@@ -195,9 +188,9 @@ text-align:center;
 <li><a href="#about">About</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#process">Process</a></li>
+<li><a href="#impact">Impact</a></li>
 <li><a href="#donate">Donate</a></li>
 <li><a href="#leaderboard">Donors</a></li>
-<li><a href="#map">Centers</a></li>
 </ul>
 
 </div>
@@ -215,14 +208,40 @@ text-align:center;
 
 <div class="section" id="about">
 
-<h2>About E-Waste Recycling</h2>
+<h2>About This Project</h2>
 
 <img src="about.jpg" width="350">
 
 <p>
-Electronic waste contains valuable metals like copper, aluminium and gold.
-Our platform collects e-waste and sends it for safe recycling.
+The Smart Urban Mining Platform promotes responsible
+electronic waste recycling and resource recovery.
+E-waste contains valuable materials such as copper,
+aluminium and precious metals which can be recovered
+through safe recycling processes.
 </p>
+
+<br>
+
+<h3>Project Developed By</h3>
+
+<p>
+<b>Sanket Navnath Kemdarne</b><br>
+<b>Sandip Mane</b><br>
+Mechanical Engineering Department
+</p>
+
+<br>
+
+<h3>Under the Guidance of</h3>
+
+<p>
+<b>Miss Anushree Chandragade</b><br>
+Faculty – E-Waste Management
+</p>
+
+<br>
+
+<p>Pimpri Chinchwad College of Engineering (PCCOE)</p>
 
 </div>
 
@@ -237,19 +256,19 @@ Our platform collects e-waste and sends it for safe recycling.
 <div class="card">
 <img src="service1.jpg">
 <h3>E-Waste Collection</h3>
-<p>Collecting old electronics from homes and industries.</p>
+<p>Collection of obsolete electronics from homes and industries.</p>
 </div>
 
 <div class="card">
 <img src="service2.jpg">
 <h3>Secure Recycling</h3>
-<p>Devices are safely dismantled and recycled.</p>
+<p>Electronic devices are dismantled using safe recycling methods.</p>
 </div>
 
 <div class="card">
 <img src="service3.jpg">
 <h3>Material Recovery</h3>
-<p>Precious metals are recovered from electronics.</p>
+<p>Precious metals are recovered and reused in manufacturing.</p>
 </div>
 
 </div>
@@ -267,30 +286,34 @@ Our platform collects e-waste and sends it for safe recycling.
 <div class="card">
 <img src="process1.jpg">
 <h3>Collection</h3>
+<p>Electronic waste is gathered from homes and collection centers.</p>
 </div>
 
 <div class="card">
 <img src="process2.jpg">
 <h3>Sorting</h3>
+<p>Waste is categorized based on material type and device category.</p>
 </div>
 
 <div class="card">
 <img src="process3.jpg">
 <h3>Dismantling</h3>
+<p>Devices are dismantled to separate valuable components.</p>
 </div>
 
 <div class="card">
 <img src="process4.jpg">
 <h3>Metal Recovery</h3>
+<p>Metals such as copper, aluminium and gold are extracted.</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- IMPACT -->
+<!-- ENVIRONMENTAL IMPACT -->
 
-<div class="section">
+<div class="section" id="impact">
 
 <h2>Environmental Impact</h2>
 
@@ -308,18 +331,159 @@ Our platform collects e-waste and sends it for safe recycling.
 
 <div class="card">
 <div class="counter" id="co2">0</div>
-<p>Kg CO₂ Prevented</p>
+<p>Kg CO₂ Pollution Prevented</p>
 </div>
 
 </div>
+
+</div>
+
+<!-- CHART -->
+
+<div class="section">
+
+<h2>Metal Recovery Dashboard</h2>
+
+<canvas id="metalChart"></canvas>
+
+</div>
+
+<!-- DONATE -->
+
+<div class="section" id="donate">
+
+<h2>Donate E-Waste</h2>
+
+<form id="donationForm">
+
+<input id="name" placeholder="Your Name" required>
+<input id="weight" type="number" placeholder="Weight (kg)" required>
+
+<button>Submit Donation</button>
+
+</form>
+
+</div>
+
+<!-- DONOR LIST -->
+
+<div class="section" id="leaderboard">
+
+<h2>Recent Donors</h2>
+
+<ul id="donorList"></ul>
 
 </div>
 
 <footer>
 
-Smart Urban Mining Platform | PCCoE Project
+Smart Urban Mining Platform | PCCOE Project
 
 </footer>
+
+<script>
+
+/* SCROLL ANIMATION */
+
+const sections=document.querySelectorAll(".section")
+
+window.addEventListener("scroll",()=>{
+
+sections.forEach(sec=>{
+
+const top=sec.getBoundingClientRect().top
+
+if(top<window.innerHeight-100){
+sec.classList.add("visible")
+}
+
+})
+
+})
+
+/* COUNTERS */
+
+function animateCounter(id,target){
+
+let el=document.getElementById(id)
+
+let count=0
+
+let interval=setInterval(()=>{
+
+count+=Math.ceil(target/50)
+
+if(count>=target){
+count=target
+clearInterval(interval)
+}
+
+el.innerText=count
+
+},40)
+
+}
+
+animateCounter("waste",1200)
+animateCounter("copper",180)
+animateCounter("co2",2500)
+
+/* CHART */
+
+const ctx=document.getElementById("metalChart")
+
+new Chart(ctx,{
+type:"bar",
+data:{
+labels:["Copper","Aluminium","Gold"],
+datasets:[{
+label:"Recovered Metals (kg)",
+data:[180,120,20],
+backgroundColor:["orange","silver","gold"]
+}]
+}
+})
+
+/* DONOR SYSTEM */
+
+let donors=JSON.parse(localStorage.getItem("donors"))||[]
+
+function displayDonors(){
+
+let list=document.getElementById("donorList")
+
+list.innerHTML=""
+
+donors.forEach(d=>{
+
+let li=document.createElement("li")
+li.innerText=d
+list.appendChild(li)
+
+})
+
+}
+
+displayDonors()
+
+document.getElementById("donationForm").addEventListener("submit",function(e){
+
+e.preventDefault()
+
+let name=document.getElementById("name").value
+let weight=document.getElementById("weight").value
+
+let text=name+" donated "+weight+" kg"
+
+donors.push(text)
+
+localStorage.setItem("donors",JSON.stringify(donors))
+
+displayDonors()
+
+})
+
+</script>
 
 </body>
 </html>
