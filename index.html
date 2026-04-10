@@ -69,26 +69,29 @@ background-size:cover;
 background-position:center;
 }
 
-.hero h1{
+/* typing animation */
+
+.typing{
+overflow:hidden;
+border-right:3px solid white;
+white-space:nowrap;
+animation:typing 4s steps(30) infinite alternate,
+blink .7s infinite;
 font-size:55px;
-margin-bottom:10px;
-animation:fadeUp 1.5s;
+}
+
+@keyframes typing{
+from{width:0}
+to{width:100%}
+}
+
+@keyframes blink{
+50%{border-color:transparent}
 }
 
 .hero p{
 font-size:22px;
-animation:fadeUp 2s;
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+margin-top:10px;
 }
 
 /* SECTION */
@@ -211,7 +214,20 @@ border-radius:10px;
 text-align:center;
 }
 
-/* FOOTER */
+/* FLOAT BUTTON */
+
+.float-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#0a7d5e;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
 
 footer{
 background:#0a7d5e;
@@ -248,7 +264,7 @@ margin-top:40px;
 
 <div class="hero">
 
-<h1>Smart Urban Mining Platform</h1>
+<h1 class="typing">Smart Urban Mining Platform</h1>
 
 <p>Transforming E-Waste into Valuable Resources</p>
 
@@ -292,7 +308,7 @@ margin-top:40px;
 <div class="process-card">
 <img src="process1.jpg">
 <h3>Collection</h3>
-<p>Electronic waste such as computers, phones and cables are collected from homes and industries.</p>
+<p>Electronic waste including computers, phones and cables are collected from homes and industries.</p>
 </div>
 
 <div class="process-card">
@@ -310,7 +326,7 @@ margin-top:40px;
 <div class="process-card">
 <img src="process4.jpg">
 <h3>Metal Recovery</h3>
-<p>Valuable metals like copper, aluminium and gold are extracted using recycling processes.</p>
+<p>Valuable metals like copper, aluminium and gold are extracted through recycling processes.</p>
 </div>
 
 </div>
@@ -327,12 +343,12 @@ margin-top:40px;
 
 <div>
 <img src="visit1.jpeg">
-<p>Students of PCCOE visited an e-waste recycling facility in MIDC Bhosari.</p>
+<p>Students from Pimpri Chinchwad College of Engineering visited an E-waste recycling facility at MIDC Bhosari.</p>
 </div>
 
 <div>
 <img src="visit2.jpeg">
-<p>Experts demonstrated dismantling of devices and recovery of metals.</p>
+<p>Experts demonstrated dismantling of devices and recovery of valuable metals.</p>
 </div>
 
 </div>
@@ -390,6 +406,8 @@ margin-top:40px;
 <p>Under the guidance of <b>Miss Anushree Chandragade</b></p>
 
 </section>
+
+<a href="#donate" class="float-btn">Donate</a>
 
 <footer>
 
@@ -450,5 +468,4 @@ cert.document.write(`
 </script>
 
 </body>
-
 </html>
