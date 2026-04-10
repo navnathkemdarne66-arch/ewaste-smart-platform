@@ -17,8 +17,6 @@ background:#f4f7f8;
 scroll-behavior:smooth;
 }
 
-/* NAVBAR */
-
 .navbar{
 display:flex;
 justify-content:space-between;
@@ -28,7 +26,6 @@ background:#0a7d5e;
 color:white;
 position:sticky;
 top:0;
-z-index:1000;
 }
 
 .navbar ul{
@@ -46,8 +43,6 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* HERO */
-
 .hero{
 height:90vh;
 background:url("hero.jpg") center/cover no-repeat;
@@ -64,27 +59,15 @@ text-shadow:2px 2px 10px black;
 font-size:50px;
 }
 
-/* SECTIONS */
-
 .section{
 padding:80px 10%;
 text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.section.visible{
-opacity:1;
-transform:translateY(0);
 }
 
 .section h2{
 color:#0a7d5e;
 margin-bottom:40px;
 }
-
-/* CARDS */
 
 .cards{
 display:grid;
@@ -97,11 +80,6 @@ background:white;
 padding:20px;
 border-radius:10px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
 }
 
 .card img{
@@ -109,45 +87,28 @@ width:100%;
 border-radius:10px;
 }
 
-.card p{
-font-size:14px;
-color:#555;
-}
-
-/* COUNTERS */
-
-.counter{
-font-size:35px;
-font-weight:bold;
-color:#0a7d5e;
-}
-
-/* DONOR FORM */
-
 form{
-max-width:400px;
+max-width:450px;
 margin:auto;
 }
 
-input{
+input,select{
 width:100%;
 padding:10px;
 margin:8px 0;
-border-radius:5px;
 border:1px solid #ccc;
+border-radius:5px;
 }
 
 button{
-width:100%;
 padding:12px;
 background:#0a7d5e;
 color:white;
 border:none;
-border-radius:5px;
+width:100%;
 cursor:pointer;
+border-radius:5px;
 }
-
-/* DONOR LIST */
 
 #donorList{
 list-style:none;
@@ -158,8 +119,8 @@ padding:0;
 background:white;
 margin:8px;
 padding:10px;
-border-radius:6px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+border-radius:5px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 footer{
@@ -175,26 +136,22 @@ text-align:center;
 
 <body>
 
-<!-- NAVBAR -->
-
 <div class="navbar">
 
 <h2>Urban Mining</h2>
 
 <ul>
-<li><a href="#">Home</a></li>
+
 <li><a href="#about">About</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#process">Process</a></li>
 <li><a href="#visit">Industry Visit</a></li>
-<li><a href="#impact">Impact</a></li>
 <li><a href="#donate">Donate</a></li>
-<li><a href="#leaderboard">Donors</a></li>
+<li><a href="#contact">Contact</a></li>
+
 </ul>
 
 </div>
-
-<!-- HERO -->
 
 <div class="hero">
 
@@ -209,38 +166,26 @@ text-align:center;
 
 <h2>About This Project</h2>
 
-<img src="about.jpg" width="350">
-
 <p>
-The Smart Urban Mining Platform promotes responsible
-electronic waste recycling and resource recovery.
-E-waste contains valuable materials such as copper,
-aluminium and precious metals which can be recovered
-through safe recycling processes.
+Smart Urban Mining Platform is developed to promote responsible e-waste recycling.
+Electronic waste contains valuable materials such as copper, aluminium and precious metals.
+This platform encourages people to donate e-waste and helps track environmental impact.
 </p>
-
-<br>
 
 <h3>Project Developed By</h3>
 
 <p>
 <b>Sanket Navnath Kemdarne</b><br>
-<b>Sandip Mane</b><br>
-Mechanical Engineering Department
+<b>Sandip Mane</b>
 </p>
-
-<br>
 
 <h3>Under the Guidance of</h3>
 
 <p>
-<b>Miss Anushree Chandragade</b><br>
-Faculty – E-Waste Management
+<b>Miss Anushree Chandragade</b>
 </p>
 
-<br>
-
-<p>Pimpri Chinchwad College of Engineering (PCCOE)</p>
+<p>Pimpri Chinchwad College of Engineering</p>
 
 </div>
 
@@ -255,19 +200,19 @@ Faculty – E-Waste Management
 <div class="card">
 <img src="service1.jpg">
 <h3>E-Waste Collection</h3>
-<p>Collection of obsolete electronics from homes and industries.</p>
+<p>Collection of electronic waste from homes and industries.</p>
 </div>
 
 <div class="card">
 <img src="service2.jpg">
 <h3>Secure Recycling</h3>
-<p>Electronic devices are dismantled using safe recycling methods.</p>
+<p>Devices are dismantled safely using professional recycling methods.</p>
 </div>
 
 <div class="card">
 <img src="service3.jpg">
 <h3>Material Recovery</h3>
-<p>Precious metals are recovered and reused in manufacturing.</p>
+<p>Valuable metals are recovered from electronic components.</p>
 </div>
 
 </div>
@@ -285,25 +230,21 @@ Faculty – E-Waste Management
 <div class="card">
 <img src="process1.jpg">
 <h3>Collection</h3>
-<p>Electronic waste is gathered from homes and collection centers.</p>
 </div>
 
 <div class="card">
 <img src="process2.jpg">
 <h3>Sorting</h3>
-<p>Waste is categorized based on material type and device category.</p>
 </div>
 
 <div class="card">
 <img src="process3.jpg">
 <h3>Dismantling</h3>
-<p>Devices are dismantled to separate valuable components.</p>
 </div>
 
 <div class="card">
 <img src="process4.jpg">
 <h3>Metal Recovery</h3>
-<p>Metals such as copper, aluminium and gold are extracted.</p>
 </div>
 
 </div>
@@ -314,84 +255,86 @@ Faculty – E-Waste Management
 
 <div class="section" id="visit">
 
-<h2>Industry Visit – E-Waste Recycling Facility</h2>
-
-<p>
-As part of our academic study we visited a professional
-e-waste recycling facility operated by Electrofine
-Recycling Pvt. Ltd. in association with the
-Environment Conservation Association (ECA).
-</p>
+<h2>Industry Visit</h2>
 
 <div class="cards">
 
 <div class="card">
-
 <img src="visit1.jpg">
-
-<h3>Industrial Visit – MIDC Bhosari</h3>
-
-<p>
-Students from Pimpri Chinchwad College of Engineering
-visited the recycling facility in MIDC Bhosari where
-experts explained collection, sorting and recycling
-processes used in urban mining.
-</p>
-
+<p>Visit to Electrofine Recycling Pvt Ltd facility.</p>
 </div>
 
 <div class="card">
-
 <img src="visit2.jpg">
-
-<h3>Learning from Industry Experts</h3>
-
-<p>
-During the visit engineers demonstrated dismantling
-of electronic devices and recovery of valuable
-metals such as copper and aluminium.
-</p>
-
+<p>Learning dismantling and metal recovery from industry experts.</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- ENVIRONMENTAL IMPACT -->
+<!-- DONATE SECTION -->
 
-<div class="section" id="impact">
+<div class="section" id="donate">
 
-<h2>Environmental Impact</h2>
+<h2>Donate E-Waste</h2>
 
-<div class="cards">
+<form id="donationForm">
 
-<div class="card">
-<div class="counter" id="waste">0</div>
-<p>Kg E-Waste Collected</p>
+<input id="name" placeholder="Your Name" required>
+
+<input id="phone" placeholder="Mobile Number" required>
+
+<input id="address" placeholder="Pickup Address" required>
+
+<select id="type">
+
+<option>Mobile Phone</option>
+<option>Laptop</option>
+<option>Desktop Computer</option>
+<option>Battery</option>
+<option>Printer</option>
+<option>Other Electronics</option>
+
+</select>
+
+<input id="weight" type="number" placeholder="Approx Weight (kg)" required>
+
+<input id="date" type="date" required>
+
+<button type="submit">Submit Donation</button>
+
+</form>
+
 </div>
 
-<div class="card">
-<div class="counter" id="copper">0</div>
-<p>Kg Copper Recovered</p>
-</div>
-
-<div class="card">
-<div class="counter" id="co2">0</div>
-<p>Kg CO₂ Pollution Prevented</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- CHART -->
+<!-- DONOR LIST -->
 
 <div class="section">
 
-<h2>Metal Recovery Dashboard</h2>
+<h2>Recent Donors</h2>
 
-<canvas id="metalChart"></canvas>
+<ul id="donorList"></ul>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="section" id="contact">
+
+<h2>Contact</h2>
+
+<p>
+<b>Sanket Navnath Kemdarne</b><br>
+Phone: 8080226113<br>
+Email: sanketkemdarne@gmail.com
+</p>
+
+<p>
+<b>Sandip Mane</b><br>
+Phone: 9552661862<br>
+Email: sandipmane1862@gmail.com
+</p>
 
 </div>
 
@@ -403,68 +346,42 @@ Smart Urban Mining Platform | PCCOE Project
 
 <script>
 
-/* SCROLL ANIMATION */
+let donors=[]
 
-const sections=document.querySelectorAll(".section")
+document.getElementById("donationForm").addEventListener("submit",function(e){
 
-window.addEventListener("scroll",()=>{
+e.preventDefault()
 
-sections.forEach(sec=>{
+let name=document.getElementById("name").value
+let phone=document.getElementById("phone").value
+let address=document.getElementById("address").value
+let type=document.getElementById("type").value
+let weight=document.getElementById("weight").value
+let date=document.getElementById("date").value
 
-const top=sec.getBoundingClientRect().top
+let text=name+" donated "+weight+" kg"
 
-if(top<window.innerHeight-100){
-sec.classList.add("visible")
-}
+donors.push(text)
 
-})
+let li=document.createElement("li")
+li.innerText=text
 
-})
+document.getElementById("donorList").appendChild(li)
 
-/* COUNTERS */
+let message="New E-Waste Donation:%0A"
++"Name: "+name+"%0A"
++"Phone: "+phone+"%0A"
++"Address: "+address+"%0A"
++"Device: "+type+"%0A"
++"Weight: "+weight+" kg%0A"
++"Pickup Date: "+date
 
-function animateCounter(id,target){
+window.open("https://wa.me/918080226113?text="+message)
 
-let el=document.getElementById(id)
-
-let count=0
-
-let interval=setInterval(()=>{
-
-count+=Math.ceil(target/50)
-
-if(count>=target){
-count=target
-clearInterval(interval)
-}
-
-el.innerText=count
-
-},40)
-
-}
-
-animateCounter("waste",1200)
-animateCounter("copper",180)
-animateCounter("co2",2500)
-
-/* CHART */
-
-const ctx=document.getElementById("metalChart")
-
-new Chart(ctx,{
-type:"bar",
-data:{
-labels:["Copper","Aluminium","Gold"],
-datasets:[{
-label:"Recovered Metals (kg)",
-data:[180,120,20],
-backgroundColor:["orange","silver","gold"]
-}]
-}
 })
 
 </script>
 
 </body>
+
 </html>
