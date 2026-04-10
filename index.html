@@ -11,9 +11,9 @@
 <style>
 
 body{
-font-family:Arial;
 margin:0;
-background:#f4f7f8;
+font-family:Arial;
+background:#f5f7f8;
 }
 
 /* NAVBAR */
@@ -22,18 +22,17 @@ background:#f4f7f8;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 10%;
+padding:15px 8%;
 background:#0a7d5e;
 color:white;
 position:sticky;
 top:0;
+z-index:1000;
 }
 
 .navbar ul{
 display:flex;
 list-style:none;
-margin:0;
-padding:0;
 }
 
 .navbar li{
@@ -45,7 +44,6 @@ color:white;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
-cursor:pointer;
 }
 
 .navbar a:hover{
@@ -55,40 +53,64 @@ color:#ffd700;
 /* HERO */
 
 .hero{
-height:60vh;
-background:linear-gradient(120deg,#0a7d5e,#1cc48f);
+height:85vh;
+background:url("images/hero.jpg") center/cover no-repeat;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-color:white;
 text-align:center;
+color:white;
+text-shadow:2px 2px 10px black;
+}
+
+.hero h1{
+font-size:48px;
 }
 
 /* SECTION */
 
 .section{
-padding:50px 10%;
+padding:70px 10%;
 text-align:center;
 }
 
+.section h2{
+color:#0a7d5e;
+margin-bottom:40px;
+}
+
+/* CARDS */
+
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.15);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+/* IMPACT */
+
 .counter{
-font-size:28px;
-color:#0a7d5e;
+font-size:35px;
 font-weight:bold;
+color:#0a7d5e;
 }
 
 /* FORM */
@@ -112,12 +134,12 @@ padding:12px;
 background:#0a7d5e;
 color:white;
 border:none;
-cursor:pointer;
 border-radius:5px;
+cursor:pointer;
 }
 
 button:hover{
-background:#087553;
+background:#06614a;
 }
 
 /* DONOR LIST */
@@ -129,10 +151,10 @@ padding:0;
 
 #donorList li{
 background:white;
+margin:8px;
 padding:10px;
-margin:5px;
-border-radius:5px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+border-radius:6px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* CERTIFICATE */
@@ -141,8 +163,8 @@ box-shadow:0 2px 6px rgba(0,0,0,0.1);
 display:none;
 border:6px solid #0a7d5e;
 padding:30px;
-margin-top:30px;
 background:white;
+margin-top:30px;
 }
 
 .signature img{
@@ -169,7 +191,10 @@ text-align:center;
 <h2>Urban Mining</h2>
 
 <ul>
-<li><a href="#impact">Impact</a></li>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#process">Process</a></li>
 <li><a href="#donate">Donate</a></li>
 <li><a href="#leaderboard">Donors</a></li>
 <li><a href="#map">Centers</a></li>
@@ -182,14 +207,90 @@ text-align:center;
 <div class="hero">
 
 <h1>Smart Urban Mining Platform</h1>
-
 <p>Transforming E-Waste into Valuable Resources</p>
+
+</div>
+
+<!-- ABOUT -->
+
+<div class="section" id="about">
+
+<h2>About E-Waste Recycling</h2>
+
+<img src="images/about.jpg" width="350">
+
+<p>
+Electronic waste contains valuable metals like copper, aluminium and gold.
+Our platform collects e-waste and sends it for safe recycling.
+</p>
+
+</div>
+
+<!-- SERVICES -->
+
+<div class="section" id="services">
+
+<h2>Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="images/service1.jpg">
+<h3>E-Waste Collection</h3>
+<p>Collecting old electronics from homes and industries.</p>
+</div>
+
+<div class="card">
+<img src="images/service2.jpg">
+<h3>Secure Recycling</h3>
+<p>Devices are safely dismantled and recycled.</p>
+</div>
+
+<div class="card">
+<img src="images/service3.jpg">
+<h3>Material Recovery</h3>
+<p>Precious metals are recovered from electronics.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- PROCESS -->
+
+<div class="section" id="process">
+
+<h2>Recycling Process</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="images/process1.jpg">
+<h3>Collection</h3>
+</div>
+
+<div class="card">
+<img src="images/process2.jpg">
+<h3>Sorting</h3>
+</div>
+
+<div class="card">
+<img src="images/process3.jpg">
+<h3>Dismantling</h3>
+</div>
+
+<div class="card">
+<img src="images/process4.jpg">
+<h3>Metal Recovery</h3>
+</div>
+
+</div>
 
 </div>
 
 <!-- IMPACT -->
 
-<div class="section" id="impact">
+<div class="section">
 
 <h2>Environmental Impact</h2>
 
@@ -236,7 +337,7 @@ text-align:center;
 
 <input id="phone" placeholder="Phone Number">
 
-<select id="type">
+<select>
 <option>Mobile</option>
 <option>Laptop</option>
 <option>Battery</option>
@@ -261,20 +362,16 @@ text-align:center;
 
 </div>
 
-<!-- CENTERS SECTION (THIS FIXES YOUR PROBLEM) -->
+<!-- MAP -->
 
 <div class="section" id="map">
 
 <h2>E-Waste Collection Centers</h2>
 
-<p>Nearby authorized recycling locations</p>
-
 <iframe
 width="100%"
 height="350"
 style="border:0"
-loading="lazy"
-allowfullscreen
 src="https://www.google.com/maps?q=e-waste+recycling+center+india&output=embed">
 </iframe>
 
@@ -293,8 +390,6 @@ src="https://www.google.com/maps?q=e-waste+recycling+center+india&output=embed">
 <h1 id="certName"></h1>
 
 <p>For contributing to sustainable recycling of electronic waste.</p>
-
-<p>Pimpri Chinchwad College of Engineering</p>
 
 <div class="signature">
 
@@ -332,12 +427,29 @@ backgroundColor:['orange','blue','gold']
 }
 })
 
+let donors=JSON.parse(localStorage.getItem("donors"))||[]
+
+function displayDonors(){
+
+let list=document.getElementById("donorList")
+
+list.innerHTML=""
+
+donors.forEach(d=>{
+let li=document.createElement("li")
+li.innerText=d
+list.appendChild(li)
+})
+
+}
+
+displayDonors()
+
 document.getElementById("donationForm").addEventListener("submit",function(e){
 
 e.preventDefault()
 
 let name=document.getElementById("name").value
-let phone=document.getElementById("phone").value
 let weight=parseFloat(document.getElementById("weight").value)
 
 let total=parseFloat(document.getElementById("waste").innerText)
@@ -357,19 +469,18 @@ document.getElementById("co2").innerText=co2.toFixed(2)
 chart.data.datasets[0].data=[copper,aluminium,gold]
 chart.update()
 
+let donorText=name+" donated "+weight+" kg"
+
+donors.push(donorText)
+
+localStorage.setItem("donors",JSON.stringify(donors))
+
+displayDonors()
+
 document.getElementById("certName").innerText=name
 document.getElementById("certificate").style.display="block"
 
-let donorList=document.getElementById("donorList")
-
-let li=document.createElement("li")
-li.innerText=name+" donated "+weight+" kg"
-
-donorList.appendChild(li)
-
-document.getElementById("submitBtn").disabled=true
-
-let message="E-Waste Donation:%0AName:"+name+"%0APhone:"+phone+"%0AWeight:"+weight+"kg"
+let message="E-Waste Donation:%0AName:"+name+"%0AWeight:"+weight+"kg"
 
 window.open("https://wa.me/918080226113?text="+message)
 
