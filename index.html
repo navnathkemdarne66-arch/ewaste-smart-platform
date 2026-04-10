@@ -373,7 +373,12 @@ margin-top:40px;
 
 <input id="weight" placeholder="Weight (Kg)">
 
-<button onclick="donate()">Submit Donation</button>
+<button type="submit">Submit Donation</button>
+
+<button onclick="certificate()" 
+style="background:#2e7d32;color:white;padding:10px 20px;border:none;border-radius:6px;margin-top:10px">
+Download Certificate
+</button>
 
 <button onclick="certificate()">Download Certificate</button>
 
@@ -470,47 +475,90 @@ align-items:center;
 height:100vh;
 }
 
+function generateCertificate(){
+
+let name=document.getElementById("name").value
+let item=document.getElementById("item").value
+let weight=document.getElementById("weight").value
+
+if(name=="" || item=="" || weight==""){
+alert("Please fill donation details first")
+return
+}
+
+let date=new Date().toLocaleDateString()
+
+let certificate=window.open("","_blank")
+
+certificate.document.write(`
+
+<html>
+<head>
+<title>E-Waste Donation Certificate</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f7f8;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
 .certificate{
 width:900px;
 background:white;
-border:12px solid #2e7d32;
+border:10px solid #2e7d32;
 padding:40px;
 text-align:center;
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 h1{
 color:#2e7d32;
 font-size:36px;
+margin-bottom:10px;
 }
 
 h2{
-margin-top:20px;
 font-size:30px;
+margin:15px 0;
 }
 
 p{
 font-size:18px;
-margin:10px 0;
+margin:6px 0;
 }
 
-.logo{
-font-size:24px;
+.header{
+font-size:22px;
 font-weight:bold;
 color:#2e7d32;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
-.sign{
-margin-top:40px;
+.details{
+margin-top:20px;
 }
 
-.sign img{
-width:200px;
+.signatures{
+display:flex;
+justify-content:space-around;
+margin-top:50px;
+}
+
+.sign-box{
+text-align:center;
+}
+
+.sign-box img{
+width:120px;
 }
 
 .footer{
-margin-top:20px;
+margin-top:30px;
 font-style:italic;
 color:#2e7d32;
 }
@@ -523,7 +571,9 @@ color:#2e7d32;
 
 <div class="certificate">
 
-<div class="logo">Urban Mining & Recycling Initiative</div>
+<div class="header">
+Urban Mining & Sustainable Recycling Initiative
+</div>
 
 <h1>Certificate of Recycling & Contribution</h1>
 
@@ -533,29 +583,59 @@ color:#2e7d32;
 
 <p>has responsibly donated electronic waste</p>
 
-<p><b>Item:</b> ${item}</p>
+<div class="details">
+
+<p><b>Item Donated:</b> ${item}</p>
 
 <p><b>Total Quantity Received:</b> ${weight} Kg</p>
 
-<p>The donated material will be processed using eco-friendly
-recycling techniques following sustainable urban mining practices.</p>
+<p><b>Date:</b> ${date}</p>
 
-<div class="sign">
+<p><b>Location:</b> Pimpri-Chinchwad, Maharashtra</p>
 
+</div>
+
+<p>
+The donated material will be processed using eco-friendly recycling
+methods following sustainable urban mining practices.
+</p>
+
+<div class="signatures">
+
+<div class="sign-box">
 <img src="signature.png">
-
 <p><b>Sanket Navnath Kemdarne</b></p>
 <p>E-Waste Collection Initiative</p>
+</div>
+
+<div class="sign-box">
+<img src="signature_sandip.png">
+<p><b>Sandip Mane</b></p>
+<p>Project Coordinator</p>
+</div>
+
+<div class="sign-box">
+<img src="signature_mam.png">
+<p><b>Miss Anushree Chandragade</b></p>
+<p>Faculty Guide</p>
+</div>
 
 </div>
 
 <div class="footer">
-We appreciate your effort in contributing to a greener environment.
+We appreciate your contribution towards a greener environment.
 </div>
+
+<br><br>
+
+<button onclick="window.print()" style="padding:10px 20px;font-size:16px;background:#2e7d32;color:white;border:none;border-radius:5px;cursor:pointer">
+Download / Print Certificate
+</button>
 
 </div>
 
 </body>
+
 </html>
 
 `)
