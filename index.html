@@ -442,24 +442,120 @@ window.open("https://wa.me/918080226113?text="+msg)
 function certificate(){
 
 let name=document.getElementById("name").value
-
 let item=document.getElementById("item").value
-
 let weight=document.getElementById("weight").value
+
+if(name=="" || item=="" || weight==""){
+alert("Please fill donation details first")
+return
+}
 
 let cert=window.open("","_blank")
 
 cert.document.write(`
 
-<h1 style="text-align:center">Certificate of Contribution</h1>
+<html>
+<head>
+<title>Recycling Certificate</title>
 
-<p style="text-align:center">This certificate is awarded to</p>
+<style>
 
-<h2 style="text-align:center">${name}</h2>
+body{
+font-family:Arial;
+background:#f5f5f5;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
 
-<p style="text-align:center">For donating ${item} (${weight} Kg)</p>
+.certificate{
+width:900px;
+background:white;
+border:12px solid #2e7d32;
+padding:40px;
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
 
-<img src="signature.png" width="200" style="display:block;margin:auto">
+h1{
+color:#2e7d32;
+font-size:36px;
+}
+
+h2{
+margin-top:20px;
+font-size:30px;
+}
+
+p{
+font-size:18px;
+margin:10px 0;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#2e7d32;
+margin-bottom:10px;
+}
+
+.sign{
+margin-top:40px;
+}
+
+.sign img{
+width:200px;
+}
+
+.footer{
+margin-top:20px;
+font-style:italic;
+color:#2e7d32;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="certificate">
+
+<div class="logo">Urban Mining & Recycling Initiative</div>
+
+<h1>Certificate of Recycling & Contribution</h1>
+
+<p>This document certifies that</p>
+
+<h2>${name}</h2>
+
+<p>has responsibly donated electronic waste</p>
+
+<p><b>Item:</b> ${item}</p>
+
+<p><b>Total Quantity Received:</b> ${weight} Kg</p>
+
+<p>The donated material will be processed using eco-friendly
+recycling techniques following sustainable urban mining practices.</p>
+
+<div class="sign">
+
+<img src="signature.png">
+
+<p><b>Sanket Navnath Kemdarne</b></p>
+<p>E-Waste Collection Initiative</p>
+
+</div>
+
+<div class="footer">
+We appreciate your effort in contributing to a greener environment.
+</div>
+
+</div>
+
+</body>
+</html>
 
 `)
 
