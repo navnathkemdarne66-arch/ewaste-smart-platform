@@ -423,13 +423,13 @@ cert.document.write(`
 
 <html>
 <head>
-<title>Recycling Certificate</title>
+<title>E-Waste Recycling Certificate</title>
 
 <style>
 
 body{
 font-family:Arial;
-background:#f4f7f8;
+background:#e8f5e9;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -439,9 +439,72 @@ height:100vh;
 .certificate{
 width:900px;
 background:white;
-border:10px solid #2e7d32;
+border:12px solid #2e7d32;
 padding:40px;
 text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+
+.logo{
+width:90px;
+margin-bottom:10px;
+}
+
+.header{
+font-size:22px;
+color:#2e7d32;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+h1{
+color:#2e7d32;
+font-size:38px;
+margin-bottom:10px;
+}
+
+h2{
+font-size:30px;
+margin:15px 0;
+}
+
+p{
+font-size:18px;
+margin:6px 0;
+}
+
+.details{
+margin-top:15px;
+}
+
+.signatures{
+display:flex;
+justify-content:space-around;
+margin-top:60px;
+}
+
+.sign-box{
+text-align:center;
+}
+
+.sign-box img{
+width:120px;
+}
+
+.footer{
+margin-top:40px;
+font-style:italic;
+color:#2e7d32;
+}
+
+button{
+background:#2e7d32;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+margin-top:20px;
+cursor:pointer;
 }
 
 </style>
@@ -452,36 +515,73 @@ text-align:center;
 
 <div class="certificate">
 
+<img src="recycle-logo.png" class="logo">
+
+<div class="header">
+Urban Mining & Sustainable Recycling Initiative
+</div>
+
 <h1>Certificate of Recycling & Contribution</h1>
 
-<p>This certifies that</p>
+<p>This document certifies that</p>
 
 <h2>${name}</h2>
 
-<p>has donated electronic waste</p>
+<p>has responsibly donated electronic waste for recycling.</p>
 
-<p><b>Item:</b> ${item}</p>
+<div class="details">
 
-<p><b>Quantity:</b> ${weight} Kg</p>
+<p><b>Item Donated:</b> ${item}</p>
+
+<p><b>Total Quantity Received:</b> ${weight} Kg</p>
 
 <p><b>Date:</b> ${date}</p>
 
-<br>
+<p><b>Location:</b> Pimpri-Chinchwad, Maharashtra</p>
 
-<img src="signature.png" width="120">
+</div>
 
+<p>
+The donated material will be processed using sustainable urban mining
+techniques to recover valuable resources while protecting the environment.
+</p>
+
+<div class="signatures">
+
+<div class="sign-box">
+<img src="signature.png">
 <p><b>Sanket Navnath Kemdarne</b></p>
+<p>E-Waste Initiative</p>
+</div>
+
+<div class="sign-box">
+<img src="signature_sandip.png">
+<p><b>Sandip Mane</b></p>
+<p>Project Coordinator</p>
+</div>
+
+<div class="sign-box">
+<img src="signature_mam.png">
+<p><b>Miss Anushree Chandragade</b></p>
+<p>Faculty Guide</p>
+</div>
+
+</div>
+
+<div class="footer">
+We appreciate your contribution toward building a greener and sustainable environment.
+</div>
+
+<button onclick="window.print()">Download / Print Certificate</button>
 
 </div>
 
 </body>
-
 </html>
 
 `)
 
 }
-
 </script>
 
 </body>
