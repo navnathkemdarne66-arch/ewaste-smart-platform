@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,14 @@
 
 <style>
 
-body{
-font-family:Arial, Helvetica, sans-serif;
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
 background:#f4f7f8;
 }
 
@@ -20,7 +26,7 @@ background:#f4f7f8;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 10%;
+padding:15px 8%;
 background:#0a7d5e;
 color:white;
 position:sticky;
@@ -34,7 +40,7 @@ list-style:none;
 }
 
 .navbar li{
-margin-left:20px;
+margin-left:25px;
 }
 
 .navbar a{
@@ -45,43 +51,78 @@ transition:0.3s;
 }
 
 .navbar a:hover{
-color:#ffe082;
+color:#ffd54f;
 }
 
 /* HERO */
 
 .hero{
-height:70vh;
+height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-color:white;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("hero.jpg");
+color:white;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("hero.jpg");
 background-size:cover;
 background-position:center;
 }
 
 .hero h1{
-font-size:48px;
+font-size:55px;
+margin-bottom:10px;
+animation:fadeUp 1.5s;
 }
 
 .hero p{
-font-size:20px;
+font-size:22px;
+animation:fadeUp 2s;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* SECTION */
 
 .section{
-padding:60px 10%;
+padding:70px 8%;
 }
 
 .section-title{
 text-align:center;
-font-size:32px;
+font-size:34px;
 color:#0a7d5e;
 margin-bottom:40px;
+}
+
+/* IMPACT */
+
+.impact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.impact div{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.impact div:hover{
+transform:translateY(-10px);
 }
 
 /* PROCESS */
@@ -112,16 +153,6 @@ border-radius:12px;
 margin-bottom:15px;
 }
 
-.process-card h3{
-color:#0a7d5e;
-}
-
-.process-card p{
-font-size:14px;
-line-height:1.6;
-color:#555;
-}
-
 /* VISIT */
 
 .visit{
@@ -132,10 +163,10 @@ gap:30px;
 
 .visit img{
 width:100%;
-border-radius:12px;
+border-radius:10px;
 }
 
-/* DONATE */
+/* FORM */
 
 .form{
 max-width:500px;
@@ -158,6 +189,7 @@ padding:12px 20px;
 cursor:pointer;
 border-radius:6px;
 font-size:16px;
+margin-top:10px;
 }
 
 button:hover{
@@ -190,6 +222,7 @@ margin-top:40px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -197,23 +230,56 @@ margin-top:40px;
 <!-- NAVBAR -->
 
 <div class="navbar">
+
 <h2>Urban Mining</h2>
 
 <ul>
 <li><a href="#">Home</a></li>
+<li><a href="#impact">Impact</a></li>
 <li><a href="#process">Process</a></li>
-<li><a href="#visit">Industry Visit</a></li>
+<li><a href="#visit">Visit</a></li>
 <li><a href="#donate">Donate</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </div>
 
 <!-- HERO -->
 
 <div class="hero">
+
 <h1>Smart Urban Mining Platform</h1>
+
 <p>Transforming E-Waste into Valuable Resources</p>
+
 </div>
+
+<!-- IMPACT -->
+
+<section id="impact" class="section">
+
+<h2 class="section-title">Environmental Impact</h2>
+
+<div class="impact">
+
+<div>
+<h2 id="waste">0</h2>
+<p>Kg E-Waste Collected</p>
+</div>
+
+<div>
+<h2 id="copper">0</h2>
+<p>Kg Copper Recovered</p>
+</div>
+
+<div>
+<h2 id="co2">0</h2>
+<p>Kg CO₂ Pollution Prevented</p>
+</div>
+
+</div>
+
+</section>
 
 <!-- PROCESS -->
 
@@ -226,76 +292,54 @@ margin-top:40px;
 <div class="process-card">
 <img src="process1.jpg">
 <h3>Collection</h3>
-<p>
-Electronic waste including computers, phones, cables and circuit boards
-is collected from households and industries. Proper collection prevents
-hazardous materials from entering landfills.
-</p>
+<p>Electronic waste such as computers, phones and cables are collected from homes and industries.</p>
 </div>
 
 <div class="process-card">
 <img src="process2.jpg">
 <h3>Sorting</h3>
-<p>
-Collected waste is sorted based on materials such as plastics,
-circuit boards and copper wiring. Efficient sorting increases
-metal recovery efficiency.
-</p>
+<p>E-waste is sorted into plastics, circuit boards and metals to increase recycling efficiency.</p>
 </div>
 
 <div class="process-card">
 <img src="process3.jpg">
 <h3>Dismantling</h3>
-<p>
-Devices are dismantled to separate valuable components such as
-motherboards, processors and power units. Hazardous materials
-are removed safely.
-</p>
+<p>Devices are dismantled to separate reusable components and hazardous materials.</p>
 </div>
 
 <div class="process-card">
 <img src="process4.jpg">
 <h3>Metal Recovery</h3>
-<p>
-Precious metals such as copper, aluminium, gold and silver are
-recovered using mechanical separation and metallurgical processes.
-This is called urban mining.
-</p>
+<p>Valuable metals like copper, aluminium and gold are extracted using recycling processes.</p>
 </div>
 
 </div>
+
 </section>
 
 <!-- INDUSTRY VISIT -->
 
 <section id="visit" class="section">
 
-<h2 class="section-title">Industry Visit – E-Waste Recycling Facility</h2>
+<h2 class="section-title">Industry Visit – E-Waste Facility</h2>
 
 <div class="visit">
 
 <div>
 <img src="visit1.jpeg">
-<p>
-Students of Pimpri Chinchwad College of Engineering visited an
-E-waste recycling facility at MIDC Bhosari operated by
-Electrofine Recycling Pvt Ltd in association with ECA.
-</p>
+<p>Students of PCCOE visited an e-waste recycling facility in MIDC Bhosari.</p>
 </div>
 
 <div>
 <img src="visit2.jpeg">
-<p>
-During the visit experts demonstrated dismantling of electronic
-devices and recovery of metals such as copper and aluminium.
-</p>
+<p>Experts demonstrated dismantling of devices and recovery of metals.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- DONATION -->
+<!-- DONATE -->
 
 <section id="donate" class="section">
 
@@ -304,16 +348,25 @@ devices and recovery of metals such as copper and aluminium.
 <div class="form">
 
 <input id="name" placeholder="Your Name">
+
 <input id="phone" placeholder="Phone Number">
+
 <input id="address" placeholder="Pickup Address">
-<input id="item" placeholder="Item Type (Laptop, Mobile etc)">
+
+<input id="item" placeholder="Item (Laptop, Mobile etc)">
+
 <input id="weight" placeholder="Weight (Kg)">
 
 <button onclick="donate()">Submit Donation</button>
 
+<button onclick="certificate()">Download Certificate</button>
+
 <div class="donors">
+
 <h3>Recent Donors</h3>
+
 <ul id="donorList"></ul>
+
 </div>
 
 </div>
@@ -339,7 +392,9 @@ devices and recovery of metals such as copper and aluminium.
 </section>
 
 <footer>
+
 Smart Urban Mining Platform | PCCOE Project
+
 </footer>
 
 <script>
@@ -352,11 +407,6 @@ let address=document.getElementById("address").value
 let item=document.getElementById("item").value
 let weight=document.getElementById("weight").value
 
-if(name==""||phone==""||address==""){
-alert("Please fill details")
-return
-}
-
 let donorList=document.getElementById("donorList")
 
 let li=document.createElement("li")
@@ -365,15 +415,40 @@ li.innerText=name+" donated "+item+" ("+weight+"kg)"
 
 donorList.appendChild(li)
 
-/* WhatsApp message */
-
 let msg="New E-Waste Donation%0AName:"+name+"%0APhone:"+phone+"%0AAddress:"+address+"%0AItem:"+item+"%0AWeight:"+weight+"kg"
 
 window.open("https://wa.me/918080226113?text="+msg)
 
 }
 
+function certificate(){
+
+let name=document.getElementById("name").value
+
+let item=document.getElementById("item").value
+
+let weight=document.getElementById("weight").value
+
+let cert=window.open("","_blank")
+
+cert.document.write(`
+
+<h1 style="text-align:center">Certificate of Contribution</h1>
+
+<p style="text-align:center">This certificate is awarded to</p>
+
+<h2 style="text-align:center">${name}</h2>
+
+<p style="text-align:center">For donating ${item} (${weight} Kg)</p>
+
+<img src="signature.png" width="200" style="display:block;margin:auto">
+
+`)
+
+}
+
 </script>
 
 </body>
+
 </html>
