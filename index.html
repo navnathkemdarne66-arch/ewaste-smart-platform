@@ -317,12 +317,53 @@ margin-top:40px;
 
 <!-- INDUSTRY VISIT -->
 
+<section id="visit" class="section">
 
+<h2 class="section-title">Industry Visit</h2>
 
+<div class="visit">
+
+<div>
+
+<img src="visit1.jpeg">
+
+<p>Students visited Electrofine Recycling Facility MIDC Bhosari.</p>
+
+</div>
+
+<div>
+
+<img src="visit2.jpeg">
+
+<p>Experts explained dismantling and recovery of metals.</p>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- DONATION -->
 
+<section id="donate" class="section">
 
+<h2 class="section-title">Donate Your E-Waste</h2>
+
+<div class="form">
+
+<input id="name" placeholder="Your Name">
+
+<input id="phone" placeholder="Phone Number">
+
+<input id="address" placeholder="Pickup Address">
+
+<input id="item" placeholder="Item (Laptop / Mobile)">
+
+<input id="weight" placeholder="Weight (Kg)">
+
+<button onclick="donate()">Submit Donation</button>
+
+<button onclick="certificate()">Download Certificate</button>
 
 <div class="donors">
 
@@ -351,7 +392,13 @@ Under the guidance of **Miss Anushree Chandragade**
 
 function donate(){
 
+let name=document.getElementById("name").value
+let phone=document.getElementById("phone").value
+let address=document.getElementById("address").value
+let item=document.getElementById("item").value
+let weight=document.getElementById("weight").value
 
+let donorList=document.getElementById("donorList")
 
 let li=document.createElement("li")
 
@@ -375,3 +422,119 @@ let date=new Date().toLocaleDateString()
 
 let certID="EW-"+Math.floor(Math.random()*100000)
 
+let cert=window.open("","_blank")
+
+cert.document.write(`
+
+<html>
+
+<head>
+
+<title>Certificate</title>
+
+<style>
+
+body{
+background:#e8f5e9;
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.certificate{
+width:900px;
+background:white;
+padding:40px;
+border:12px solid #2e7d32;
+text-align:center;
+}
+
+.logo{
+width:90px;
+margin-bottom:10px;
+}
+
+.signatures{
+display:flex;
+justify-content:space-around;
+margin-top:60px;
+}
+
+.sign-box img{
+width:120px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="certificate">
+
+<img src="recycle-logo.png" class="logo">
+
+<h1>Certificate of Recycling & Contribution</h1>
+
+<p>This certifies that</p>
+
+<h2>${name}</h2>
+
+<p>has responsibly donated electronic waste.</p>
+
+<p><b>Item:</b> ${item}</p>
+
+<p><b>Quantity:</b> ${weight} Kg</p>
+
+<p><b>Date:</b> ${date}</p>
+
+<p><b>Certificate ID:</b> ${certID}</p>
+
+<div class="signatures">
+
+<div class="sign-box">
+
+<img src="signature.png">
+
+<p><b>Sanket Navnath Kemdarne</b></p>
+
+</div>
+
+<div class="sign-box">
+
+<img src="signature_sandip.png">
+
+<p><b>Sandip Mane</b></p>
+
+</div>
+
+<div class="sign-box">
+
+<img src="signature_mam.png">
+
+<p><b>Miss Anushree Chandragade</b></p>
+
+</div>
+
+</div>
+
+<br>
+
+<button onclick="window.print()">Download Certificate</button>
+
+</div>
+
+</body>
+
+</html>
+
+`)
+
+}
+
+</script>
+
+</body>
+</html>
