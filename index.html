@@ -1,9 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smart Urban Mining Platform</title>
+<title>Sanket Kemdarne | E-Waste Smart Platform & Urban Mining Project</title>
+
+<meta name="description" content="Developed by Sanket Kemdarne, this Smart Urban Mining Platform helps in E-Waste collection, recycling and certificate generation.">
+<meta name="keywords" content="E-waste recycling, Urban mining, Electronic waste management, Donate e-waste, Smart recycling platform">
+<meta name="author" content="Sanket Kemdarne">
 
 <style>
 
@@ -229,13 +236,11 @@ margin-top:40px;
 <h2>Urban Mining</h2>
 
 <ul>
-
 <li><a href="#">Home</a></li>
 <li><a href="#impact">Impact</a></li>
 <li><a href="#process">Process</a></li>
 <li><a href="#visit">Industry Visit</a></li>
 <li><a href="#donate">Donate</a></li>
-
 </ul>
 
 </div>
@@ -245,7 +250,6 @@ margin-top:40px;
 <div class="hero">
 
 <h1 class="typing">Smart Urban Mining Platform</h1>
-
 <p>Transforming Electronic Waste into Valuable Resources</p>
 
 </div>
@@ -322,19 +326,13 @@ margin-top:40px;
 <div class="visit">
 
 <div>
-
 <img src="visit1.jpeg">
-
 <p>Students visited Electrofine Recycling Facility MIDC Bhosari.</p>
-
 </div>
 
 <div>
-
 <img src="visit2.jpeg">
-
 <p>Experts explained dismantling and recovery of metals.</p>
-
 </div>
 
 </div>
@@ -350,25 +348,17 @@ margin-top:40px;
 <div class="form">
 
 <input id="name" placeholder="Your Name">
-
 <input id="phone" placeholder="Phone Number">
-
 <input id="address" placeholder="Pickup Address">
-
 <input id="item" placeholder="Item (Laptop / Mobile)">
-
 <input id="weight" placeholder="Weight (Kg)">
 
 <button onclick="donate()">Submit Donation</button>
-
 <button onclick="certificate()">Download Certificate</button>
 
 <div class="donors">
-
 <h3>Recent Donors</h3>
-
 <ul id="donorList"></ul>
-
 </div>
 
 </div>
@@ -378,12 +368,9 @@ margin-top:40px;
 <a href="#donate" class="float-btn">Donate</a>
 
 <footer>
-
-Smart Urban Mining Platform  
-Developed by **Sanket Kemdarne & Sandip Mane**  
-
-Under the guidance of **Miss Anushree Chandragade**
-
+Smart Urban Mining Platform <br>
+Developed by <b>Sanket Kemdarne & Sandip Mane</b> <br>
+Under the guidance of <b>Miss Anushree Chandragade</b>
 </footer>
 
 <script>
@@ -417,7 +404,6 @@ let item=document.getElementById("item").value
 let weight=document.getElementById("weight").value
 
 let date=new Date().toLocaleDateString()
-
 let certID="EW-"+Math.floor(Math.random()*100000)
 
 let cert=window.open("","_blank")
@@ -425,13 +411,10 @@ let cert=window.open("","_blank")
 cert.document.write(`
 
 <html>
-
 <head>
-
 <title>Certificate</title>
 
 <style>
-
 body{
 background:#e8f5e9;
 font-family:Arial;
@@ -449,11 +432,6 @@ border:12px solid #2e7d32;
 text-align:center;
 }
 
-.logo{
-width:90px;
-margin-bottom:10px;
-}
-
 .signatures{
 display:flex;
 justify-content:space-around;
@@ -463,7 +441,6 @@ margin-top:60px;
 .sign-box img{
 width:120px;
 }
-
 </style>
 
 </head>
@@ -471,8 +448,6 @@ width:120px;
 <body>
 
 <div class="certificate">
-
-<img src="recycle-logo.png" class="logo">
 
 <h1>Certificate of Recycling & Contribution</h1>
 
@@ -483,37 +458,25 @@ width:120px;
 <p>has responsibly donated electronic waste.</p>
 
 <p><b>Item:</b> ${item}</p>
-
 <p><b>Quantity:</b> ${weight} Kg</p>
-
 <p><b>Date:</b> ${date}</p>
-
 <p><b>Certificate ID:</b> ${certID}</p>
 
 <div class="signatures">
 
 <div class="sign-box">
-
 <img src="signature.png">
-
 <p><b>Sanket Navnath Kemdarne</b></p>
-
 </div>
 
 <div class="sign-box">
-
 <img src="signature_sandip.png">
-
 <p><b>Sandip Mane</b></p>
-
 </div>
 
 <div class="sign-box">
-
 <img src="signature_mam.png">
-
 <p><b>Miss Anushree Chandragade</b></p>
-
 </div>
 
 </div>
@@ -525,7 +488,6 @@ width:120px;
 </div>
 
 </body>
-
 </html>
 
 `)
